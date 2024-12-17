@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeSupport</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start; /* 左寄せ */
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        h2 {
+            color: #4CAF50; /* 緑色 */
+            margin: 0 20px; /* 左右のマージンを追加 */
+        }
+        .menu-toggle {
+            display: none; /* デフォルトでは非表示 */
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px; /* ナビゲーションとの隙間 */
+        }
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: #4CAF50;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4CAF50; /* 緑色 */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #2E7D32; /* 濃い緑色 */
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+        .catchphrase {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #4CAF50; /* 緑色 */
+        }
+        .image-placeholder {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-placeholder img {
+            width: 100%;
+            height: auto; /* 高さを自動調整 */
+            display: block; /* 余白を削除 */
+        }
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            margin-top: 50px;
+            text-align: left; /* 左寄せ */
+        }
+        footer h2 {
+            margin: 10px 0;
+            color: #4CAF50; /* 緑色 */
+        }
+        footer p, footer ul {
+            margin: 5px 0;
+        }
+        .divider-thin {
+            border-top: 1px solid #ccc; /* 薄いグレーの線 */
+            margin: 10px 0; /* 上下の余白 */
+        }
+        .divider-thick {
+            border-top: 2px solid #4CAF50; /* 緑色の太い線 */
+            margin: 10px 0; /* 上下の余白 */
+        }
+        .item-title {
+            font-weight: bold; /* 太文字 */
+        }
+        .item-value {
+            color: #333; /* 通常の文字色 */
+        }
+
+        /* メディアクエリ */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex; /* 小さい画面で表示 */
+            }
+            nav {
+                display: none; /* 初期状態では非表示 */
+                flex-direction: column; /* 縦並びにする */
+                position: absolute; /* 絶対配置 */
+                top: 70px; /* ヘッダーの下に表示 */
+                left: 20px; /* 左寄せ */
+                background-color: white; /* 背景色 */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加 */
+                width: 200px; /* 幅を設定 */
+                z-index: 1; /* 重なり順を設定 */
+            }
+            nav a {
+                padding: 10px; /* パディングを追加 */
+                text-align: center; /* 中央揃え */
+                width: 100%; /* 幅を100%に */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h2>LifeSupport</h2>
+        <nav class="nav-menu" id="navMenu">
+            <a href="./access.html">アクセス</a>
+            <a href="#">よくある情報</a>
+            <a href="#">採用情報</a>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="image-placeholder">
+            <img src="img/heya.jpg" alt="リビングの画像">
+        </div>
+        <div class="about-section">
+            <h1>人生を豊かにする住まい探しを、私たちと共に。</h1>
+<p>住まい探しは人生で最も大きなお買い物のひとつです。住まいがしっかりしていれば、人生はより豊かで安定します。</p>
+<p>大きな決断には不安もつきものです。だからこそ、私たちはお客様と共に悩み、心から「ここに住みたい」と思える瞬間まで全力でサポートします。</p>
+
+            <img src="img/heya2.jpg" alt="リビングの画像">
+        </div>
+    </div>
+    <footer>
+        <h2>株式会社ライフサポート</h2>
+        <div class="divider-thick"></div>
+        <p class="item-title">住所</p>
+        <p class="item-value">東京都港区 六本木四丁目9番2－908号</p>
+        <div class="divider-thin"></div>
+        <p class="item-title">TEL</p>
+        <p class="item-value">03-6910-5278</p>
+        <div class="divider-thin"></div>
+        <p class="item-title">FAX</p>
+        <p class="item-value">03-6910-5279</p>
+        <div class="divider-thin"></div>
+        <p class="item-title">営業時間</p>
+        <p class="item-value">9:00-18:00</p>
+        <div class="divider-thin"></div>
+        <p class="item-title">定休日</p>
+        <p class="item-value">水曜日</p>
+        <div class="divider-thin"></div>
+        <p class="item-title">業務内容</p>
+        <p class="item-value">
+            <p>不動産の売買、賃貸、管理、並びに仲介、斡旋</p>
+            <p>不動産に関するコンサルティング業務</p>
+        </p>
+        <div class="divider-thin"></div>
+        <p class="item-title">アクセス</p>
+        <p class="item-value">六本木駅6番出口から徒歩1分</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
