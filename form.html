@@ -11,35 +11,15 @@
             padding: 0;
             background-color: #f9f9f9;    
             color: #333;
-            text-align: center; /* 中央ぞろえ */
+            text-align: center;
         }
         header {
             background-color: #fff;
             padding: 20px;
             display: flex;
-            justify-content: flex-start; /* 左寄せ */
+            justify-content: space-between; /* スペースを均等に */
             align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #4CAF50;
-            margin: 0 20px;
-        }
-        .menu-toggle {
-            display: none;
-        }
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #2E7D32;
         }
         .container {
             max-width: 600px;
@@ -49,7 +29,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin: 20px auto;
-            text-align: left; /* 左寄せでレイアウト調整 */
+            text-align: left;
         }
         .form-group {
             margin-bottom: 15px;
@@ -62,11 +42,11 @@
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
-            border: 1px solid #ccc; /* 枠線を細く */
+            border: 1px solid #ccc;
             border-radius: 4px;
         }
         .required {
-            border: 1px solid black; /* 枠線を細く変更 */
+            border: 1px solid black;
         }
         .mandatory {
             color: red;
@@ -83,7 +63,7 @@
             background-color: #218838;
         }
         .description {
-            color: #666; /* 色を薄く */
+            color: #666;
             font-size: 14px;
             margin-bottom: 20px;
         }
@@ -96,28 +76,94 @@
             flex: 1;
         }
 
+        header {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        h2 {
+            color: #4CAF50; /* 緑色 */
+            margin: 0 20px; /* 左右のマージンを追加 */
+            flex-grow: 1; /* 残りのスペースを占有 */
+            text-align: left; /* 左寄せ */
+        }
+        .menu-toggle {
+            display: none; /* デフォルトでは非表示 */
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px; /* ナビゲーションとの隙間 */
+        }
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: #4CAF50;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4CAF50; /* 緑色 */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #2E7D32; /* 濃い緑色 */
+        }
+
+        /* メディアクエリ */
         @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
+            .menu-toggle {
+                display: flex; /* 小さい画面で表示 */
+            }
+            nav {
+                display: none; /* 初期状態では非表示 */
+                flex-direction: column; /* 縦並びにする */
+                position: absolute; /* 絶対配置 */
+                top: 70px; /* ヘッダーの下に表示 */
+                left: 20px; /* 左寄せ */
+                background-color: white; /* 背景色 */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加 */
+                width: 200px; /* 幅を設定 */
+                z-index: 1; /* 重なり順を設定 */
+            }
+            nav a {
+                padding: 10px; /* パディングを追加 */
+                text-align: center; /* 中央揃え */
+                width: 100%; /* 幅を100%に */
             }
         }
     </style>
 </head>
+</head>
 <body>
-  <header>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <h2>お問い合わせフォーム</h2>
-    <nav class="nav-menu" id="navMenu">
-      <a href="./index.html">ホーム</a>
-      <a href="./access.html">アクセス</a>
-      <a href="./information.html">よくある情報</a>
-      <a href="./career.html">採用情報</a>
-    </nav>
-</header>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h2>LifeSupport</h2>
+        <nav class="nav-menu" id="navMenu">
+            <a href="./index.html">トップ</a>
+            <a href="./access.html">アクセス</a>
+            <a href="./career.html">採用情報</a>
+            <a href="./form.html">問い合わせフォーム</a>
+        </nav>
+    </header>
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 
     <div class="container">
         <h1>お問い合わせ</h1>
@@ -165,5 +211,7 @@
             <button type="submit">送信</button>
         </form>
     </div>
+</body>
+</html>
 </body>
 </html>
