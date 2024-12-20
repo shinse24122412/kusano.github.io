@@ -16,14 +16,16 @@
             background-color: #fff;
             padding: 20px;
             display: flex;
-            justify-content: flex-start; /* 左寄せ */
+            justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: relative;
         }
-        h2 {
+        header h2 {
             color: #4CAF50; /* 緑色 */
             margin: 0 20px; /* 左右のマージンを追加 */
+            flex-grow: 1; /* 残りのスペースを占有 */
+            text-align: left; /* 左寄せ */
         }
         .menu-toggle {
             display: none; /* デフォルトでは非表示 */
@@ -50,6 +52,29 @@
         }
         nav a:hover {
             color: #2E7D32; /* 濃い緑色 */
+        }
+
+        /* メディアクエリ */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex; /* 小さい画面で表示 */
+            }
+            nav {
+                display: none; /* 初期状態では非表示 */
+                flex-direction: column; /* 縦並びにする */
+                position: absolute; /* 絶対配置 */
+                top: 70px; /* ヘッダーの下に表示 */
+                left: 20px; /* 左寄せ */
+                background-color: white; /* 背景色 */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加 */
+                width: 200px; /* 幅を設定 */
+                z-index: 1; /* 重なり順を設定 */
+            }
+            nav a {
+                padding: 10px; /* パディングを追加 */
+                text-align: center; /* 中央揃え */
+                width: 100%; /* 幅を100%に */
+            }
         }
         .main-content {
             text-align: center;
@@ -97,29 +122,6 @@
         }
         .item-value {
             color: #333; /* 通常の文字色 */
-        }
-
-        /* メディアクエリ */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex; /* 小さい画面で表示 */
-            }
-            nav {
-                display: none; /* 初期状態では非表示 */
-                flex-direction: column; /* 縦並びにする */
-                position: absolute; /* 絶対配置 */
-                top: 70px; /* ヘッダーの下に表示 */
-                left: 20px; /* 左寄せ */
-                background-color: white; /* 背景色 */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加 */
-                width: 200px; /* 幅を設定 */
-                z-index: 1; /* 重なり順を設定 */
-            }
-            nav a {
-                padding: 10px; /* パディングを追加 */
-                text-align: center; /* 中央揃え */
-                width: 100%; /* 幅を100%に */
-            }
         }
     </style>
 </head>
