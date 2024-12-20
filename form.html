@@ -17,7 +17,7 @@
             background-color: #fff;
             padding: 20px;
             display: flex;
-            justify-content: space-between; /* スペースを均等に */
+            justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -75,27 +75,17 @@
         .row .form-group {
             flex: 1;
         }
-
-        header {
-            background-color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: relative;
-        }
         h2 {
-            color: #4CAF50; /* 緑色 */
-            margin: 0 20px; /* 左右のマージンを追加 */
-            flex-grow: 1; /* 残りのスペースを占有 */
-            text-align: left; /* 左寄せ */
+            color: #4CAF50;
+            margin: 0 20px;
+            flex-grow: 1;
+            text-align: left;
         }
         .menu-toggle {
-            display: none; /* デフォルトでは非表示 */
+            display: none;
             flex-direction: column;
             cursor: pointer;
-            margin-right: 20px; /* ナビゲーションとの隙間 */
+            margin-right: 20px;
         }
         .bar {
             height: 3px;
@@ -110,38 +100,32 @@
         }
         nav a {
             text-decoration: none;
-            color: #4CAF50; /* 緑色 */
+            color: #4CAF50;
             font-weight: bold;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #2E7D32; /* 濃い緑色 */
+            color: #2E7D32;
         }
 
         /* メディアクエリ */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex; /* 小さい画面で表示 */
+            .container {
+                padding: 15px; /* パディングを少し小さく */
+                margin: 10px; /* マージンを少し小さく */
             }
-            nav {
-                display: none; /* 初期状態では非表示 */
+            .row {
                 flex-direction: column; /* 縦並びにする */
-                position: absolute; /* 絶対配置 */
-                top: 70px; /* ヘッダーの下に表示 */
-                left: 20px; /* 左寄せ */
-                background-color: white; /* 背景色 */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加 */
-                width: 200px; /* 幅を設定 */
-                z-index: 1; /* 重なり順を設定 */
+                gap: 0; /* 隙間をなくす */
             }
-            nav a {
-                padding: 10px; /* パディングを追加 */
-                text-align: center; /* 中央揃え */
+            .form-group {
                 width: 100%; /* 幅を100%に */
+            }
+            button {
+                width: 100%; /* ボタンも幅を100%に */
             }
         }
     </style>
-</head>
 </head>
 <body>
     <header>
@@ -211,7 +195,5 @@
             <button type="submit">送信</button>
         </form>
     </div>
-</body>
-</html>
 </body>
 </html>
